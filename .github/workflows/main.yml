@@ -1,0 +1,28 @@
+name: Main
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+jobs:
+  fetch_and_push:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get UUP dump CLI
+        run: |
+          git clone --depth=1 --single-branch --branch=master https://git.uupdump.net/uup-dump/standalone.git
+          mv standalone/* .
+      - name: Get Windows 10 versions
+        run: |
+          php fetchdetect.php all Retail Mainline 17763 1 125 Production
+          php fetchdetect.php all Retail Mainline 19044 1288 125 Production
+          php fetchdetect.php all Retail Mainline 19045 2006 4 Production
+      - name: Get Windows 11 versions
+        run: |
+          php fetchdetect.php all Retail Mainline 22621 382 4 Production
+          php fetchdetect.php all Retail Mainline 22631 2428 4 Production
+          php fetchdetect.php all Retail Mainline 26100 2 125 Production
+      - name: List files
+        run: ls
