@@ -12,8 +12,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Get UUP dump CLI
         run: |
-          git clone --depth=1 --single-branch --branch=master https://git.uupdump.net/uup-dump/standalone.git
+          git clone --depth=1 --single-branch --branch=master --recurse-submodules https://git.uupdump.net/uup-dump/standalone.git
           mv standalone/* .
+          rm -rf standalone
       - name: Get Windows 10 versions
         run: |
           php fetchdetect.php all Retail Mainline 17763 1 125 Production
