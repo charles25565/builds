@@ -14,6 +14,7 @@ jobs:
         run: |
           git clone --depth=1 --single-branch --branch=master --recurse-submodules https://git.uupdump.net/uup-dump/standalone.git
           mv standalone/* .
+          mv standalone/.* .
           rmdir standalone
       - name: Get Windows 10 versions
         run: |
