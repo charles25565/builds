@@ -29,5 +29,11 @@ jobs:
           php fetchdetect.php all Retail Mainline 22621 382 4 Production
           php fetchdetect.php all Retail Mainline 22631 2428 4 Production
           php fetchdetect.php all Retail Mainline 26100 2 125 Production
-      - name: List files
-        run: ls
+      - name: Push packs & fileinfos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fileinfo
+          git add packs
+          git commit -m "feat: upload fileinfo + packs"
+          git push
