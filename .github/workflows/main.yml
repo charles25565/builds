@@ -45,6 +45,7 @@ jobs:
           set -x
           php fetchdetect.php all ReleasePreview Mainline 19045 2006 4 Production
           php fetchdetect.php all ReleasePreview Mainline 26100 2 4 Production
+          php fetchdetect.php all Beta Mainline 22631 2428 4 Production
           php fetchdetect.php all Beta Mainline 26100 2 4 Production
           php fetchdetect.php all Dev Mainline 26100 2 4 Production
           php fetchdetect.php all Canary Mainline 26100 2 4 Production
