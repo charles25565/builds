@@ -42,6 +42,7 @@ jobs:
           set -x
           php fetchdetect.php all Retail Mainline 17763 55 7 Production
           php fetchdetect.php all Retail Mainline 20348 169 7 Production
+          php fetchdetect.php all Retail Mainline 25398 469 7 Production
           php fetchdetect.php all Retail Mainline 26100 1742 7 Production
       - name: Get latest Insider versions
         run: |
