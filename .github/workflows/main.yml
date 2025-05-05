@@ -33,7 +33,7 @@ jobs:
         run: |
           set -x
           php fetchdetect.php all Retail Mainline 22000 9 4 Production
-          php fetchdetect.php all Retail Mainline 22621 382 4 Production
+          php fetchdetect.php all Retail Mainline 22621 3 4 Production
           php fetchdetect.php all Retail Mainline 22631 2428 4 Production
           php fetchdetect.php all Retail Mainline 26100 2 125 Production
       - name: Get Hyper-V server version
