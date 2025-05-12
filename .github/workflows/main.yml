@@ -15,7 +15,7 @@ jobs:
       - name: Get UUP dump CLI
         run: |
           set -x
-          git clone --depth=1 --single-branch --branch=master --recurse-submodules https://git.uupdump.net/uup-dump/standalone.git
+          git clone --depth=1 --recurse-submodules https://git.uupdump.net/uup-dump/standalone.git
           mv standalone/* .
           rm -rf standalone/.git
           rm standalone/.gitignore
